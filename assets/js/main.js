@@ -1,8 +1,21 @@
 /* ============== STACH — main.js ============== */
+
+// always start at the top on load/refresh — disable browser scroll restoration
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+
 (() => {
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // strip any hash present at load so we don't auto-jump to a section
+  if (location.hash){
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  // ensure top after load (covers async layout shifts)
+  window.addEventListener('load', () => window.scrollTo(0, 0));
 
   /* ---------- YEAR ---------- */
   const yearEl = $('#year');
@@ -68,18 +81,18 @@
     }
     let p = 0;
     const tick = () => {
-      const inc = Math.max(1, Math.round((100 - p) * 0.06));
+      const inc = Math.max(1, Math.round((100 - p) * 0.10));
       p = Math.min(100, p + inc);
       if (counterEl) counterEl.textContent = p;
       if (barEl) barEl.style.width = p + '%';
       if (p < 100){
-        setTimeout(tick, 60 + Math.random()*60);
+        setTimeout(tick, 35 + Math.random()*30);
       } else {
         setTimeout(() => {
           preloader?.classList.add('is-done');
           document.body.classList.add('is-ready');
           onReady();
-        }, 380);
+        }, 240);
       }
     };
     tick();
@@ -102,6 +115,8 @@
       gsap.ticker.add(t => lenis.raf(t * 1000));
       gsap.ticker.lagSmoothing(0);
     }
+    // ensure we're at the top after lenis init
+    lenis.scrollTo(0, { immediate: true, force: true });
   }
 
   /* ---------- ANCHOR LINKS ---------- */
@@ -112,11 +127,22 @@
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
+      const fromOverlay = !!a.closest('.overlay');
       closeMenu();
-      if (lenis){
-        lenis.scrollTo(target, { offset: -10, duration: 1.4 });
+      if (fromOverlay){
+        // instant teleport — no smooth scroll
+        const y = target.getBoundingClientRect().top + window.scrollY - 10;
+        if (lenis){
+          lenis.scrollTo(y, { immediate: true });
+        } else {
+          window.scrollTo({ top: y, behavior: 'auto' });
+        }
       } else {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (lenis){
+          lenis.scrollTo(target, { offset: -10, duration: 1.4 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
@@ -273,14 +299,46 @@
         );
       });
 
-      // hero deep image parallax (mouse)
-      const heroImg = $('.hero__img');
-      if (heroImg){
-        document.addEventListener('mousemove', e => {
-          const x = (e.clientX / window.innerWidth - .5) * 14;
-          const y = (e.clientY / window.innerHeight - .5) * 10;
-          heroImg.style.transform = `translate3d(${-x}px, ${-y}px, 0)`;
-        });
+      // hero parallax — mouse on desktop, gyroscope on mobile
+      const heroImgWrap = $('.hero__img-wrap');
+      if (heroImgWrap){
+        let tx = 0, ty = 0;
+        const apply = () => {
+          heroImgWrap.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+        };
+        const isFinePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+        if (isFinePointer){
+          document.addEventListener('mousemove', e => {
+            tx = -((e.clientX / window.innerWidth) - .5) * 24;
+            ty = -((e.clientY / window.innerHeight) - .5) * 18;
+            apply();
+          });
+        } else {
+          // gyroscope
+          const onOrient = e => {
+            const gamma = Math.max(-25, Math.min(25, e.gamma || 0)); // left-right tilt
+            const beta  = Math.max(-25, Math.min(25, (e.beta || 0) - 30)); // front-back tilt (offset 30°)
+            tx = -(gamma / 25) * 28;
+            ty = -(beta  / 25) * 20;
+            apply();
+          };
+          // iOS 13+ permission
+          if (typeof DeviceOrientationEvent !== 'undefined' &&
+              typeof DeviceOrientationEvent.requestPermission === 'function'){
+            const askOnce = () => {
+              DeviceOrientationEvent.requestPermission()
+                .then(state => {
+                  if (state === 'granted'){
+                    window.addEventListener('deviceorientation', onOrient, true);
+                  }
+                }).catch(()=>{});
+            };
+            document.body.addEventListener('touchstart', askOnce, { once:true, passive:true });
+            document.body.addEventListener('click',     askOnce, { once:true });
+          } else {
+            window.addEventListener('deviceorientation', onOrient, true);
+          }
+        }
       }
 
       // big footer reveal
@@ -336,7 +394,7 @@
   }
 
   /* ---------- BOOT ---------- */
-  // start preloader after window.load (or instantly if image-light)
-  if (document.readyState === 'complete') runPreloader();
-  else window.addEventListener('load', runPreloader, { once:true });
+  // start preloader as soon as DOM is ready (don't wait for all images)
+  if (document.readyState !== 'loading') runPreloader();
+  else document.addEventListener('DOMContentLoaded', runPreloader, { once:true });
 })();

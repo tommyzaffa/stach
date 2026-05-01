@@ -81,7 +81,7 @@ window.STACH_I18N = {
     "footer.tagline":"A new classic code for the contemporary man.",
     "footer.menu":"Menu","footer.contact":"Contatti","footer.lang":"Lingua",
     "footer.craft":"Crafted with care.",
-    "footer.credit":"Sito sviluppato da Thomas Zaffalon"
+    "footer.credit":"Sito sviluppato da <a class=\"credit-link\" href=\"https://www.tommyzaffa.com\" target=\"_blank\" rel=\"noopener\">Thomas Zaffalon</a>"
   },
 
   /* ========== ENGLISH ========== */
@@ -164,7 +164,7 @@ window.STACH_I18N = {
     "footer.tagline":"A new classic code for the contemporary man.",
     "footer.menu":"Menu","footer.contact":"Contact","footer.lang":"Language",
     "footer.craft":"Crafted with care.",
-    "footer.credit":"Website developed by Thomas Zaffalon"
+    "footer.credit":"Website developed by <a class=\"credit-link\" href=\"https://www.tommyzaffa.com\" target=\"_blank\" rel=\"noopener\">Thomas Zaffalon</a>"
   },
 
   /* ========== DEUTSCH ========== */
@@ -247,7 +247,7 @@ window.STACH_I18N = {
     "footer.tagline":"A new classic code for the contemporary man.",
     "footer.menu":"Menü","footer.contact":"Kontakt","footer.lang":"Sprache",
     "footer.craft":"Mit Sorgfalt gemacht.",
-    "footer.credit":"Website entwickelt von Thomas Zaffalon"
+    "footer.credit":"Website entwickelt von <a class=\"credit-link\" href=\"https://www.tommyzaffa.com\" target=\"_blank\" rel=\"noopener\">Thomas Zaffalon</a>"
   },
 
   /* ========== FRANÇAIS ========== */
@@ -330,6 +330,6 @@ window.STACH_I18N = {
     "footer.tagline":"A new classic code for the contemporary man.",
     "footer.menu":"Menu","footer.contact":"Contact","footer.lang":"Langue",
     "footer.craft":"Fait avec soin.",
-    "footer.credit":"Site développé par Thomas Zaffalon"
+    "footer.credit":"Site développé par <a class=\"credit-link\" href=\"https://www.tommyzaffa.com\" target=\"_blank\" rel=\"noopener\">Thomas Zaffalon</a>"
   }
 };

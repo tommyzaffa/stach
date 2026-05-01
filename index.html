@@ -16,6 +16,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Italiana&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css" />
+<script>
+  // run as early as possible so the browser doesn't restore the previous scroll
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash){
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  window.scrollTo(0, 0);
+</script>
 </head>
 <body>
 
@@ -84,7 +92,7 @@
         <h6 data-i18n="overlay.hours">Orari</h6>
         <p data-i18n="overlay.hoursVal">Lun–Ven 10:30 — 18:30<br>Sabato 10:30 — 18:00</p>
       </div>
-      <div>
+      <div class="overlay__hide-mobile">
         <h6 data-i18n="overlay.contact">Contatti</h6>
         <p>
           <a href="mailto:info@factory-laces.com">info@factory-laces.com</a><br>
@@ -100,7 +108,9 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero__media">
-    <img src="img/esterno%201.jpg" alt="Stach Boutique" class="hero__img" data-parallax="0.25"/>
+    <div class="hero__img-wrap">
+      <img src="img/esterno%201.jpg" alt="Stach Boutique" class="hero__img" data-parallax="0.25"/>
+    </div>
     <div class="hero__veil"></div>
   </div>
 
@@ -121,6 +131,24 @@
 
   <div class="hero__marquee">
     <div class="marquee__track">
+      <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
+      <span data-i18n="hero.tag2">Pulito</span><i>•</i>
+      <span data-i18n="hero.tag3">Furbo</span><i>•</i>
+      <span data-i18n="hero.tag4">New Classic Code</span><i>•</i>
+      <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
+      <span data-i18n="hero.tag2">Pulito</span><i>•</i>
+      <span data-i18n="hero.tag3">Furbo</span><i>•</i>
+      <span data-i18n="hero.tag4">New Classic Code</span><i>•</i>
+      <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
+      <span data-i18n="hero.tag2">Pulito</span><i>•</i>
+      <span data-i18n="hero.tag3">Furbo</span><i>•</i>
+      <span data-i18n="hero.tag4">New Classic Code</span><i>•</i>
+    </div>
+    <div class="marquee__track" aria-hidden="true">
+      <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
+      <span data-i18n="hero.tag2">Pulito</span><i>•</i>
+      <span data-i18n="hero.tag3">Furbo</span><i>•</i>
+      <span data-i18n="hero.tag4">New Classic Code</span><i>•</i>
       <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
       <span data-i18n="hero.tag2">Pulito</span><i>•</i>
       <span data-i18n="hero.tag3">Furbo</span><i>•</i>
@@ -158,6 +186,12 @@
   <div class="manifesto__strip">
     <div class="strip__track">
       <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+    </div>
+    <div class="strip__track" aria-hidden="true">
       <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
       <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
       <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
@@ -247,7 +281,8 @@
         <span>WOC</span><i>·</i>
         <span>AFTERLABEL</span><i>·</i>
         <span>JG1</span><i>·</i>
-        <!-- duplicate -->
+      </div>
+      <div class="brands__track" aria-hidden="true">
         <span>OTHMAN</span><i>·</i>
         <span>AZURE MONACO</span><i>·</i>
         <span>JOSH MIKAWA</span><i>·</i>
@@ -272,7 +307,8 @@
         <span>ORTO</span><i>·</i>
         <span>DEPERLU</span><i>·</i>
         <span>UNDEFINED 1999</span><i>·</i>
-        <!-- duplicate -->
+      </div>
+      <div class="brands__track" aria-hidden="true">
         <span>CRUNA</span><i>·</i>
         <span>DOPPIAA</span><i>·</i>
         <span>BROOKSFIELD</span><i>·</i>
