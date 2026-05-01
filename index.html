@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5" />
+<meta name="theme-color" content="#0d0c0a" />
+<title>STACH — A new classic code for the contemporary man</title>
+<meta name="description" content="STACH boutique. Una bottega contemporanea a Lugano, in Via M.Magatti 1. Selezione essenziale per l'uomo contemporaneo." />
+<meta property="og:title" content="STACH — A new classic code" />
+<meta property="og:description" content="Una bottega contemporanea a Lugano. Selezione essenziale per l'uomo contemporaneo." />
+<meta property="og:image" content="img/esterno%201.jpg" />
+<link rel="icon" type="image/png" href="img/logo%202%20bello.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Italiana&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="preloader__inner">
+    <div class="preloader__brand">
+      <span class="preloader__brand-line">STACH</span>
+      <span class="preloader__brand-sub" data-i18n="loader.sub">— una bottega contemporanea —</span>
+    </div>
+    <div class="preloader__counter"><span id="preloaderCount">0</span><i>%</i></div>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor" id="cursor"><span class="cursor__label"></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Stach">
+    <img src="img/logo%202%20bello.png" alt="Stach" />
+  </a>
+
+  <div class="nav__right">
+    <div class="lang" id="lang">
+      <button class="lang__current" aria-haspopup="listbox" aria-expanded="false">
+        <span id="langCurrent">IT</span>
+        <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <ul class="lang__list" role="listbox">
+        <li><button data-lang="it">IT — Italiano</button></li>
+        <li><button data-lang="en">EN — English</button></li>
+        <li><button data-lang="de">DE — Deutsch</button></li>
+        <li><button data-lang="fr">FR — Français</button></li>
+      </ul>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+      <span class="bars" aria-hidden="true"><span></span><span></span></span>
+      <em data-i18n="nav.menu">Menu</em>
+    </button>
+  </div>
+</header>
+
+<!-- ============ FULLSCREEN MENU ============ -->
+<nav class="overlay" id="overlay" aria-hidden="true">
+  <div class="overlay__bg"><span></span><span></span><span></span><span></span></div>
+  <div class="overlay__inner">
+    <div class="overlay__nav">
+      <ol class="overlay__list">
+        <li><a href="#manifesto" data-num="01" data-i18n="menu.manifesto">Manifesto</a></li>
+        <li><a href="#bottega" data-num="02" data-i18n="menu.bottega">La Bottega</a></li>
+        <li><a href="#selezione" data-num="03" data-i18n="menu.selezione">Selezione</a></li>
+        <li><a href="#persone" data-num="04" data-i18n="menu.persone">Persone</a></li>
+        <li><a href="#gift" data-num="05" data-i18n="menu.gift">Gift Card</a></li>
+        <li><a href="#visita" data-num="06" data-i18n="menu.visita">Visita</a></li>
+      </ol>
+    </div>
+    <aside class="overlay__aside">
+      <div>
+        <h6 data-i18n="overlay.address">Indirizzo</h6>
+        <p>Via M.Magatti 1<br>6900 Lugano — CH</p>
+      </div>
+      <div>
+        <h6 data-i18n="overlay.hours">Orari</h6>
+        <p data-i18n="overlay.hoursVal">Lun–Ven 10:30 — 18:30<br>Sabato 10:30 — 18:00</p>
+      </div>
+      <div>
+        <h6 data-i18n="overlay.contact">Contatti</h6>
+        <p>
+          <a href="mailto:info@factory-laces.com">info@factory-laces.com</a><br>
+          <a href="https://www.instagram.com/stachclothing/" target="_blank" rel="noopener">Instagram — @stachclothing</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero__media">
+    <img src="img/esterno%201.jpg" alt="Stach Boutique" class="hero__img" data-parallax="0.25"/>
+    <div class="hero__veil"></div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__eyebrow"><span class="dot"></span><em data-i18n="hero.eyebrow">Lugano · dal 2023</em></div>
+    <h1 class="hero__title">
+      <span class="line"><span data-i18n="hero.title1">A new classic code</span></span>
+      <span class="line italic"><span data-i18n="hero.title2">for the contemporary man.</span></span>
+    </h1>
+    <p class="hero__lead" data-i18n="hero.lead">Non un marchio da inseguire. Una bottega per chi sa scegliere.</p>
+  </div>
+
+  <div class="hero__bottom">
+    <div class="hero__scroll" data-i18n="hero.scroll">scorri ↓</div>
+    <div class="hero__time" id="heroClock">Lugano —</div>
+    <div class="hero__coord">46.0101° N · 8.9600° E</div>
+  </div>
+
+  <div class="hero__marquee">
+    <div class="marquee__track">
+      <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
+      <span data-i18n="hero.tag2">Pulito</span><i>•</i>
+      <span data-i18n="hero.tag3">Furbo</span><i>•</i>
+      <span data-i18n="hero.tag4">New Classic Code</span><i>•</i>
+      <span data-i18n="hero.tag1">Essenziale</span><i>•</i>
+      <span data-i18n="hero.tag2">Pulito</span><i>•</i>
+      <span data-i18n="hero.tag3">Furbo</span><i>•</i>
+      <span data-i18n="hero.tag4">New Classic Code</span><i>•</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto" id="manifesto">
+  <div class="section__head">
+    <span class="section__num">01</span>
+    <span class="section__label" data-i18n="manifesto.label">Manifesto</span>
+  </div>
+
+  <div class="manifesto__grid">
+    <h2 class="manifesto__quote">
+      <span data-reveal data-i18n="manifesto.q1">Il lusso ha perso senso.</span>
+      <span data-reveal data-i18n="manifesto.q2">Non più cifre folli —</span>
+      <span data-reveal data-i18n="manifesto.q3">gusto, sostanza, misura.</span>
+      <span data-reveal class="italic" data-i18n="manifesto.q4">Esiste un nuovo codice.</span>
+    </h2>
+
+    <div class="manifesto__body">
+      <p data-reveal data-i18n="manifesto.p1">Contro il superfluo. Non servono troppi capi, ma quelli giusti. Non servono tendenze, ma scelte.</p>
+      <p data-reveal data-i18n="manifesto.p2">STACH nasce per chi crede nella durata, nella misura e nella personalità. Un guardaroba essenziale, costruito nel tempo, lontano da ciò che passa e vicino a ciò che resta.</p>
+      <p data-reveal class="manifesto__sign" data-i18n="manifesto.p3">— La furbizia non è risparmiare, ma scegliere con criterio.</p>
+    </div>
+  </div>
+
+  <div class="manifesto__strip">
+    <div class="strip__track">
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+      <span>New&nbsp;Classic&nbsp;Code</span><i>✦</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOTTEGA ============ -->
+<section class="bottega" id="bottega">
+  <div class="section__head">
+    <span class="section__num">02</span>
+    <span class="section__label" data-i18n="bottega.label">La Bottega</span>
+  </div>
+
+  <div class="bottega__intro">
+    <h2 class="bottega__title">
+      <span data-reveal data-i18n="bottega.t1">Una bottega</span>
+      <span data-reveal class="italic" data-i18n="bottega.t2">contemporanea.</span>
+    </h2>
+    <p data-reveal data-i18n="bottega.p1">Una selezione che si amplia e si definisce. Stagione dopo stagione, prenderà sempre più identità. La piazza resta il centro.</p>
+  </div>
+
+  <div class="gallery">
+    <figure class="gallery__item gallery__item--tall" data-parallax-img>
+      <img src="img/interno%201.jpg" alt="Interno bottega" />
+      <figcaption><em>01</em><span data-i18n="bottega.cap1">Interno · Via Magatti</span></figcaption>
+    </figure>
+    <figure class="gallery__item" data-parallax-img>
+      <img src="img/cappotto.jpg" alt="Cappotto" />
+      <figcaption><em>02</em><span data-i18n="bottega.cap2">Outerwear</span></figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--wide" data-parallax-img>
+      <img src="img/IMG_2735.jpg" alt="Dettaglio" />
+      <figcaption><em>03</em><span data-i18n="bottega.cap3">Dettagli</span></figcaption>
+    </figure>
+    <figure class="gallery__item" data-parallax-img>
+      <img src="img/giacca%20elegante%201.jpg" alt="Giacca" />
+      <figcaption><em>04</em><span data-i18n="bottega.cap4">Tailoring</span></figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--tall" data-parallax-img>
+      <img src="img/scarpe%201.jpg" alt="Calzature" />
+      <figcaption><em>05</em><span data-i18n="bottega.cap5">Calzature</span></figcaption>
+    </figure>
+    <figure class="gallery__item" data-parallax-img>
+      <img src="img/maglia%201.jpg" alt="Maglia" />
+      <figcaption><em>06</em><span data-i18n="bottega.cap6">Maglieria</span></figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--wide" data-parallax-img>
+      <img src="img/IMG_2737.jpg" alt="Atelier" />
+      <figcaption><em>07</em><span data-i18n="bottega.cap7">Atelier</span></figcaption>
+    </figure>
+    <figure class="gallery__item" data-parallax-img>
+      <img src="img/scarpe%20e%20giacca%20elegante.jpg" alt="Look" />
+      <figcaption><em>08</em><span data-i18n="bottega.cap8">Look</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ SELEZIONE ============ -->
+<section class="selezione" id="selezione">
+  <div class="section__head section__head--light">
+    <span class="section__num">03</span>
+    <span class="section__label" data-i18n="selezione.label">Selezione</span>
+  </div>
+
+  <div class="selezione__intro">
+    <h2 class="selezione__title">
+      <span data-reveal data-i18n="selezione.t1">La selezione</span>
+      <span data-reveal class="italic" data-i18n="selezione.t2">nasce dal contatto diretto.</span>
+    </h2>
+    <p data-reveal data-i18n="selezione.p1">Showroom a Milano. Si provano i capi, si valutano vestibilità, materiali e proporzioni. Ci confrontiamo con i brand: raccontiamo cosa è STACH oggi e come immaginiamo la prossima stagione in bottega.</p>
+    <p data-reveal class="muted" data-i18n="selezione.p2">Capire come un capo veste, come si inserisce nella linea, a chi può parlare una volta arrivato in piazza.</p>
+  </div>
+
+  <div class="brands">
+    <div class="brands__row">
+      <div class="brands__track">
+        <span>OTHMAN</span><i>·</i>
+        <span>AZURE MONACO</span><i>·</i>
+        <span>JOSH MIKAWA</span><i>·</i>
+        <span>DIANA STUDIO</span><i>·</i>
+        <span>40WEFT</span><i>·</i>
+        <span>THESTROY</span><i>·</i>
+        <span>FAMILY FIRST MILANO</span><i>·</i>
+        <span>WOC</span><i>·</i>
+        <span>AFTERLABEL</span><i>·</i>
+        <span>JG1</span><i>·</i>
+        <!-- duplicate -->
+        <span>OTHMAN</span><i>·</i>
+        <span>AZURE MONACO</span><i>·</i>
+        <span>JOSH MIKAWA</span><i>·</i>
+        <span>DIANA STUDIO</span><i>·</i>
+        <span>40WEFT</span><i>·</i>
+        <span>THESTROY</span><i>·</i>
+        <span>FAMILY FIRST MILANO</span><i>·</i>
+        <span>WOC</span><i>·</i>
+        <span>AFTERLABEL</span><i>·</i>
+        <span>JG1</span><i>·</i>
+      </div>
+    </div>
+    <div class="brands__row brands__row--reverse">
+      <div class="brands__track">
+        <span>CRUNA</span><i>·</i>
+        <span>DOPPIAA</span><i>·</i>
+        <span>BROOKSFIELD</span><i>·</i>
+        <span>GUARINUCCI</span><i>·</i>
+        <span>ANTICA CUOIERIA</span><i>·</i>
+        <span>ARAGONA</span><i>·</i>
+        <span>LF</span><i>·</i>
+        <span>ORTO</span><i>·</i>
+        <span>DEPERLU</span><i>·</i>
+        <span>UNDEFINED 1999</span><i>·</i>
+        <!-- duplicate -->
+        <span>CRUNA</span><i>·</i>
+        <span>DOPPIAA</span><i>·</i>
+        <span>BROOKSFIELD</span><i>·</i>
+        <span>GUARINUCCI</span><i>·</i>
+        <span>ANTICA CUOIERIA</span><i>·</i>
+        <span>ARAGONA</span><i>·</i>
+        <span>LF</span><i>·</i>
+        <span>ORTO</span><i>·</i>
+        <span>DEPERLU</span><i>·</i>
+        <span>UNDEFINED 1999</span><i>·</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="selezione__floor">
+    <div class="floor__pic" data-parallax-img>
+      <img src="img/giacca%202.jpg" alt="Capo" />
+    </div>
+    <div class="floor__txt">
+      <p data-reveal data-i18n="selezione.p3">Cambio stagione in bottega. Il codice resta lo stesso:</p>
+      <h3 data-reveal class="italic" data-i18n="selezione.p3b">essenziale, pulito, furbo.</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSONE ============ -->
+<section class="persone" id="persone">
+  <div class="section__head">
+    <span class="section__num">04</span>
+    <span class="section__label" data-i18n="persone.label">Persone</span>
+  </div>
+
+  <div class="persone__intro">
+    <h2 class="persone__title">
+      <span data-reveal data-i18n="persone.t1">Non solo capi.</span>
+      <span data-reveal class="italic" data-i18n="persone.t2">Persone.</span>
+    </h2>
+    <p data-reveal data-i18n="persone.p1">Simone e Davide sono i volti di Stach. Accolgono, consigliano e danno vita ogni giorno al nostro spazio. Chi entra in boutique incontra prima di tutto loro — con un sorriso e la voglia di condividere il nostro pensiero.</p>
+  </div>
+
+  <div class="persone__cards">
+    <article class="person">
+      <div class="person__pic" data-parallax-img>
+        <img src="img/simone.jpg" alt="Simone" />
+      </div>
+      <div class="person__info">
+        <span class="person__role" data-i18n="persone.role">Co-founder</span>
+        <h3>Simone</h3>
+      </div>
+    </article>
+    <article class="person person--offset">
+      <div class="person__pic" data-parallax-img>
+        <img src="img/davide.jpg" alt="Davide" />
+      </div>
+      <div class="person__info">
+        <span class="person__role" data-i18n="persone.role">Co-founder</span>
+        <h3>Davide</h3>
+      </div>
+    </article>
+  </div>
+
+  <figure class="persone__wide" data-parallax-img>
+    <img src="img/simone%20e%20davide.jpg" alt="Simone e Davide" />
+    <figcaption data-i18n="persone.cap">In bottega — Via Magatti, Lugano</figcaption>
+  </figure>
+</section>
+
+<!-- ============ GIFT CARD ============ -->
+<section class="gift" id="gift">
+  <div class="section__head section__head--light">
+    <span class="section__num">05</span>
+    <span class="section__label" data-i18n="gift.label">Gift Card</span>
+  </div>
+
+  <div class="gift__grid">
+    <div class="gift__card-wrap">
+      <div class="gift__card" data-tilt>
+        <img src="img/carta%20regalo.jpg" alt="Stach Gift Card" />
+        <div class="gift__card-shine"></div>
+      </div>
+    </div>
+    <div class="gift__txt">
+      <h2 class="gift__title">
+        <span data-reveal data-i18n="gift.t1">Un regalo,</span>
+        <span data-reveal class="italic" data-i18n="gift.t2">o il tempo di scegliere.</span>
+      </h2>
+      <p data-reveal data-i18n="gift.p1">Le gift card di Stach sono disponibili in boutique. Pensate per un regalo, ma anche per chi vuole scegliere con calma.</p>
+      <a href="#visita" class="btn btn--ghost" data-cursor="visita" data-i18n="gift.btn">Vienici a trovare →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISITA ============ -->
+<section class="visita" id="visita">
+  <div class="section__head">
+    <span class="section__num">06</span>
+    <span class="section__label" data-i18n="visita.label">Visita</span>
+  </div>
+
+  <div class="visita__hero">
+    <h2 class="visita__title">
+      <span data-reveal data-i18n="visita.t1">La piazza</span>
+      <span data-reveal class="italic" data-i18n="visita.t2">resta il centro.</span>
+    </h2>
+  </div>
+
+  <div class="visita__grid">
+    <div class="visita__col">
+      <h6 data-i18n="visita.where">Dove siamo</h6>
+      <p>Via M.Magatti 1<br>6900 Lugano — Switzerland</p>
+      <a class="ulink" href="https://maps.google.com/?q=Via+M.Magatti+1,+6900+Lugano" target="_blank" rel="noopener" data-i18n="visita.map">Apri in mappe →</a>
+    </div>
+    <div class="visita__col">
+      <h6 data-i18n="visita.when">Orari</h6>
+      <p>
+        <span data-i18n="visita.mf">Lun — Ven</span><b>10:30 — 18:30</b><br>
+        <span data-i18n="visita.sa">Sabato</span><b>10:30 — 18:00</b><br>
+        <span data-i18n="visita.su">Domenica</span><b data-i18n="visita.closed">chiuso</b>
+      </p>
+    </div>
+    <div class="visita__col">
+      <h6 data-i18n="visita.touch">In contatto</h6>
+      <p>
+        <a class="ulink" href="mailto:info@factory-laces.com">info@factory-laces.com</a><br>
+        <a class="ulink" href="https://www.instagram.com/stachclothing/" target="_blank" rel="noopener">@stachclothing</a>
+      </p>
+    </div>
+  </div>
+
+  <a class="visita__bigcta" href="https://maps.google.com/?q=Via+M.Magatti+1,+6900+Lugano" target="_blank" rel="noopener" data-cursor="map">
+    <span class="bigcta__small" data-i18n="visita.cta1">Lugano · Via Magatti 1</span>
+    <span class="bigcta__big">
+      <em data-i18n="visita.cta2">Vieni</em>
+      <em class="italic" data-i18n="visita.cta3">in bottega</em>
+    </span>
+    <span class="bigcta__arrow">→</span>
+  </a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="img/logo%202%20bello.png" alt="Stach" />
+      <p data-i18n="footer.tagline">A new classic code for the contemporary man.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h6 data-i18n="footer.menu">Menu</h6>
+        <ul>
+          <li><a href="#manifesto" data-i18n="menu.manifesto">Manifesto</a></li>
+          <li><a href="#bottega" data-i18n="menu.bottega">La Bottega</a></li>
+          <li><a href="#selezione" data-i18n="menu.selezione">Selezione</a></li>
+          <li><a href="#persone" data-i18n="menu.persone">Persone</a></li>
+          <li><a href="#gift" data-i18n="menu.gift">Gift Card</a></li>
+          <li><a href="#visita" data-i18n="menu.visita">Visita</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 data-i18n="footer.contact">Contatti</h6>
+        <ul>
+          <li><a href="mailto:info@factory-laces.com">info@factory-laces.com</a></li>
+          <li><a href="https://www.instagram.com/stachclothing/" target="_blank" rel="noopener">Instagram</a></li>
+          <li>Via M.Magatti 1, 6900 Lugano</li>
+        </ul>
+      </div>
+      <div>
+        <h6 data-i18n="footer.lang">Lingua</h6>
+        <ul class="footer__langs">
+          <li><button data-lang="it">Italiano</button></li>
+          <li><button data-lang="en">English</button></li>
+          <li><button data-lang="de">Deutsch</button></li>
+          <li><button data-lang="fr">Français</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__big">STACH</div>
+
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Stach Boutique · Lugano</span>
+    <span data-i18n="footer.craft">Crafted with care.</span>
+    <span class="footer__credit" data-i18n="footer.credit">Sito sviluppato da Thomas Zaffalon</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
