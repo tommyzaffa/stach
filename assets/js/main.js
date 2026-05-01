@@ -314,28 +314,19 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
             apply();
           });
         } else {
-          // gyroscope
-          const onOrient = e => {
-            const gamma = Math.max(-25, Math.min(25, e.gamma || 0)); // left-right tilt
-            const beta  = Math.max(-25, Math.min(25, (e.beta || 0) - 30)); // front-back tilt (offset 30°)
-            tx = -(gamma / 25) * 28;
-            ty = -(beta  / 25) * 20;
-            apply();
-          };
-          // iOS 13+ permission
-          if (typeof DeviceOrientationEvent !== 'undefined' &&
-              typeof DeviceOrientationEvent.requestPermission === 'function'){
-            const askOnce = () => {
-              DeviceOrientationEvent.requestPermission()
-                .then(state => {
-                  if (state === 'granted'){
-                    window.addEventListener('deviceorientation', onOrient, true);
-                  }
-                }).catch(()=>{});
+          // gyroscope on Android (no permission needed). iOS 13+ requires an explicit
+          // user permission popup which is mandated by Apple — we skip it entirely
+          // so no popup is shown; the effect simply won't run on iOS.
+          const needsPermission = typeof DeviceOrientationEvent !== 'undefined' &&
+            typeof DeviceOrientationEvent.requestPermission === 'function';
+          if (!needsPermission){
+            const onOrient = e => {
+              const gamma = Math.max(-25, Math.min(25, e.gamma || 0));
+              const beta  = Math.max(-25, Math.min(25, (e.beta || 0) - 30));
+              tx = -(gamma / 25) * 28;
+              ty = -(beta  / 25) * 20;
+              apply();
             };
-            document.body.addEventListener('touchstart', askOnce, { once:true, passive:true });
-            document.body.addEventListener('click',     askOnce, { once:true });
-          } else {
             window.addEventListener('deviceorientation', onOrient, true);
           }
         }

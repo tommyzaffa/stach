@@ -824,6 +824,33 @@ body.menu-open .overlay__aside{opacity:1;transform:translateY(0)}
   .overlay__aside{gap:10px 24px}
 }
 
+/* Big STACH watermark inside overlay — fills empty space on mobile */
+.overlay__watermark{
+  display:none;
+  font-family:var(--f-italiana);
+  font-size:clamp(120px,40vw,260px);
+  letter-spacing:-.02em;line-height:.85;
+  color:var(--ink);opacity:.06;
+  white-space:nowrap;text-align:center;
+  pointer-events:none;
+  user-select:none;
+  margin-top:auto;
+  align-self:stretch;
+  transform:translateY(20%);
+  transition:transform 1s var(--ease) .2s, opacity .8s ease .2s;
+  opacity:0;
+}
+body.menu-open .overlay__watermark{
+  transform:translateY(0);
+  opacity:.06;
+}
+@media (max-width: 720px){
+  .overlay__watermark{display:block}
+  .overlay__inner{
+    display:flex;flex-direction:column;
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important;transition:none !important}
   [data-reveal]{opacity:1;transform:none}
