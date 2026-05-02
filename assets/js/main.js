@@ -267,12 +267,15 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
         );
       });
 
-      // hero parallax
-      gsap.to('.hero__img', {
-        yPercent: 18,
-        ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-      });
+      // hero parallax (desktop only — on mobile scrub causes jerky updates)
+      const isFinePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+      if (isFinePointer){
+        gsap.to('.hero__img', {
+          yPercent: 18,
+          ease: 'none',
+          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
+        });
+      }
 
       // section title lines split
       $$('.bottega__title span, .selezione__title span, .persone__title span, .gift__title span, .visita__title span, .manifesto__quote span').forEach(span => {
