@@ -813,7 +813,6 @@ body.menu-open .overlay__aside{opacity:1;transform:translateY(0)}
     display:flex;flex-direction:column;gap:14px;
     padding-top:4px;
   }
-  .overlay__aside .overlay__hide-mobile{display:none}
   .overlay__aside h6{margin-bottom:4px;font-size:9px;letter-spacing:.28em}
   .overlay__aside p{font-size:13px;line-height:1.45}
   .cursor{display:none}
@@ -829,30 +828,26 @@ body.menu-open .overlay__aside{opacity:1;transform:translateY(0)}
 .overlay__watermark{
   display:none;
   font-family:var(--f-italiana);
-  font-size:clamp(140px,52vw,360px);
+  font-size:30vw;
   font-weight:400;
-  letter-spacing:-.02em;line-height:.78;
+  letter-spacing:-.01em;line-height:.85;
   color:var(--ink);opacity:0;
   white-space:nowrap;text-align:center;
   pointer-events:none;
   user-select:none;
   margin-top:auto;
-  margin-left:-3vw;margin-right:-3vw;
-  margin-bottom:-2vh;
-  width:auto;
+  margin-bottom:0;
+  width:100%;
   align-self:stretch;
   transform:translateY(20%);
   transition:transform .9s var(--ease) .25s, opacity .7s ease .25s;
 }
 body.menu-open .overlay__watermark{
   transform:translateY(0);
-  opacity:.07;
+  opacity:.08;
 }
 @media (max-width: 720px){
   .overlay__watermark{display:block}
-}
-@media (max-width: 480px){
-  .overlay__watermark{font-size:60vw}
 }
 
 @media (prefers-reduced-motion: reduce){
