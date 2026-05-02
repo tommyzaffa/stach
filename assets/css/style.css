@@ -815,6 +815,7 @@ body.menu-open .overlay__aside{opacity:1;transform:translateY(0)}
   }
   .overlay__aside h6{margin-bottom:4px;font-size:9px;letter-spacing:.28em}
   .overlay__aside p{font-size:13px;line-height:1.45}
+  .overlay__only-desktop{display:none}
   .cursor{display:none}
 }
 
@@ -836,7 +837,7 @@ body.menu-open .overlay__aside{opacity:1;transform:translateY(0)}
   pointer-events:none;
   user-select:none;
   margin-top:auto;
-  margin-bottom:0;
+  margin-bottom:6vh;
   width:100%;
   align-self:stretch;
   transform:translateY(20%);
