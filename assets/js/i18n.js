@@ -16,7 +16,7 @@ window.STACH_I18N = {
     "overlay.hoursVal":"Lun–Ven 10:30 — 18:30<br>Sabato 10:30 — 18:00",
     "overlay.contact":"Contatti",
 
-    "hero.eyebrow":"Lugano · dal 2023",
+    "hero.eyebrow":"Lugano · dal 2025",
     "hero.title1":"A new classic code",
     "hero.title2":"for the contemporary man.",
     "hero.lead":"Non un marchio da inseguire. Una bottega per chi sa scegliere.",
@@ -99,7 +99,7 @@ window.STACH_I18N = {
     "overlay.hoursVal":"Mon–Fri 10:30 — 18:30<br>Saturday 10:30 — 18:00",
     "overlay.contact":"Contact",
 
-    "hero.eyebrow":"Lugano · since 2023",
+    "hero.eyebrow":"Lugano · since 2025",
     "hero.title1":"A new classic code",
     "hero.title2":"for the contemporary man.",
     "hero.lead":"Not a brand to chase. An atelier for those who know how to choose.",
@@ -182,7 +182,7 @@ window.STACH_I18N = {
     "overlay.hoursVal":"Mo–Fr 10:30 — 18:30<br>Samstag 10:30 — 18:00",
     "overlay.contact":"Kontakt",
 
-    "hero.eyebrow":"Lugano · seit 2023",
+    "hero.eyebrow":"Lugano · seit 2025",
     "hero.title1":"A new classic code",
     "hero.title2":"for the contemporary man.",
     "hero.lead":"Keine Marke, der man hinterherläuft. Ein Atelier für jene, die zu wählen wissen.",
@@ -265,7 +265,7 @@ window.STACH_I18N = {
     "overlay.hoursVal":"Lun–Ven 10:30 — 18:30<br>Samedi 10:30 — 18:00",
     "overlay.contact":"Contact",
 
-    "hero.eyebrow":"Lugano · depuis 2023",
+    "hero.eyebrow":"Lugano · depuis 2025",
     "hero.title1":"A new classic code",
     "hero.title2":"for the contemporary man.",
     "hero.lead":"Pas une marque à courir. Un atelier pour ceux qui savent choisir.",
